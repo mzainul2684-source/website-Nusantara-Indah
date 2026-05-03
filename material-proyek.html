@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Material Proyek | Ekspedisi Nusantara Indah</title>
+    <meta
+      name="description"
+      content="Daftar material proyek yang kami layani pengirimannya: besi hollow, pipa, keramik, alderon, dan banyak lagi."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              display: ["Syne", "sans-serif"],
+            },
+            colors: {
+              navy: {
+                950: "#04090F",
+                900: "#071524",
+                800: "#0A2038",
+                700: "#0D2E52",
+                600: "#1A4A7A",
+                500: "#1E5B9A",
+              },
+              amber: {
+                400: "#FBBF24",
+                500: "#F59E0B",
+                600: "#D97706",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .item-card {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .item-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        border-color: #f59e0b;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .delay-100 {
+        transition-delay: 0.1s;
+      }
+      .delay-200 {
+        transition-delay: 0.2s;
+      }
+      .delay-300 {
+        transition-delay: 0.3s;
+      }
+      .delay-400 {
+        transition-delay: 0.4s;
+      }
+      .delay-500 {
+        transition-delay: 0.5s;
+      }
+      .delay-600 {
+        transition-delay: 0.6s;
+      }
+      .wa-btn {
+        animation: waPulse 2.5s ease infinite;
+      }
+      @keyframes waPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 0 14px rgba(34, 197, 94, 0);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-navy-950 text-white font-sans antialiased">
+    <!-- NAVBAR -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-16 py-4 bg-navy-950/95 backdrop-blur-md border-b border-white/8"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center overflow-hidden">
+            <img src="/image/logo.png" alt="Logo" class="w-full h-full object-contain" />
+          </div>
+          <div>
+            <span class="font-display text-lg font-800 text-white leading-none">Nusantara Indah</span>
+            <p class="text-[9px] text-amber-400 font-bold tracking-widest uppercase leading-none mt-0.5">
+              Ekspedisi Surabaya - Bali
+            </p>
+          </div>
+        </a>
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors text-sm font-semibold"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Kembali ke Beranda
+        </a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="pt-32 pb-16 px-6 lg:px-16 bg-navy-900 relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-amber-500/5 rounded-full blur-3xl"
+        ></div>
+      </div>
+      <div class="max-w-7xl mx-auto text-center relative z-10">
+        <span class="inline-block text-amber-400 text-xs font-bold tracking-[0.25em] uppercase mb-4">Layanan Kami</span>
+        <h1 class="font-display text-4xl lg:text-6xl font-800 text-white leading-tight mb-5">
+          Material <span class="text-amber-400">Proyek</span>
+        </h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          Kami melayani pengiriman berbagai jenis material bangunan dan proyek dari Surabaya ke seluruh wilayah Bali —
+          aman, cepat, dan tepat waktu.
+        </p>
+      </div>
+    </section>
+
+    <!-- MATERIAL BESI -->
+    <section class="py-20 px-6 lg:px-16 bg-navy-950">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section header -->
+        <div class="reveal mb-12">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                />
+              </svg>
+            </div>
+            <div>
+              <h2 class="font-display text-3xl font-800 text-white">
+                Material <span class="text-amber-400">Besi</span>
+              </h2>
+              <p class="text-slate-400 text-sm mt-0.5">
+                Berbagai jenis besi dan baja untuk kebutuhan konstruksi & proyek
+              </p>
+            </div>
+          </div>
+          <div class="h-0.5 bg-gradient-to-r from-amber-500/50 to-transparent mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Besi CNP -->
+          <div
+            class="reveal delay-100 item-card bg-navy-900 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🔩
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Besi CNP</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Profil kanal C untuk rangka atap, purlin, dan struktur baja ringan.
+              </p>
+            </div>
+          </div>
+          <!-- Besi UNP -->
+          <div
+            class="reveal delay-200 item-card bg-navy-900 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🔩
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Besi UNP</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Profil kanal U (U-channel) untuk konstruksi struktur dan rangka bangunan.
+              </p>
+            </div>
+          </div>
+          <!-- Besi Hollow -->
+          <div
+            class="reveal delay-300 item-card bg-navy-900 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              ⬜
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Besi Hollow</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Pipa kotak besi hollow untuk rangka partisi, pagar, dan konstruksi ringan.
+              </p>
+            </div>
+          </div>
+          <!-- Besi Siku -->
+          <div
+            class="reveal delay-100 item-card bg-navy-900 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              📐
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Besi Siku</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Besi profil L (angle iron) untuk sambungan sudut dan rangka struktur.
+              </p>
+            </div>
+          </div>
+          <!-- Besi WF -->
+          <div
+            class="reveal delay-200 item-card bg-navy-900 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🏗️
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Besi WF</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Wide Flange (WF) untuk kolom dan balok struktur bangunan berat.
+              </p>
+            </div>
+          </div>
+          <!-- Besi Beton -->
+          <div
+            class="reveal delay-300 item-card bg-navy-900 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🪛
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Besi Beton</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Tulangan beton polos dan ulir untuk pondasi, kolom, dan slab lantai.
+              </p>
+            </div>
+          </div>
+          <!-- Pipa Galvanis -->
+          <div
+            class="reveal delay-100 item-card bg-navy-900 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🔧
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Pipa Galvanis</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Pipa besi berlapis seng anti-karat untuk instalasi air dan gas.
+              </p>
+            </div>
+          </div>
+          <!-- Besi Plat -->
+          <div
+            class="reveal delay-200 item-card bg-navy-900 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🗂️
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Besi Plat</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Plat baja lembaran untuk fabrikasi, rangka, dan berbagai aplikasi industri.
+              </p>
+            </div>
+          </div>
+          <!-- Besi Plat Strip -->
+          <div
+            class="reveal delay-300 item-card bg-navy-900 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              ➖
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Besi Plat Strip</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Strip baja tipis untuk penguat sambungan, angkur, dan aksesoris konstruksi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATERIAL LAIN -->
+    <section class="py-20 px-6 lg:px-16 bg-navy-900">
+      <div class="max-w-7xl mx-auto">
+        <div class="reveal mb-12">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+            </div>
+            <div>
+              <h2 class="font-display text-3xl font-800 text-white">
+                Material <span class="text-amber-400">Lainnya</span>
+              </h2>
+              <p class="text-slate-400 text-sm mt-0.5">Material bangunan non-besi untuk berbagai kebutuhan proyek</p>
+            </div>
+          </div>
+          <div class="h-0.5 bg-gradient-to-r from-amber-500/50 to-transparent mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Alderon -->
+          <div
+            class="reveal delay-100 item-card bg-navy-800 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🏠
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Alderon</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Atap transparan plastik ringan untuk carport, kanopi, dan area semi-terbuka.
+              </p>
+            </div>
+          </div>
+          <!-- Paku -->
+          <div
+            class="reveal delay-200 item-card bg-navy-800 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              📌
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Paku</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Berbagai ukuran paku bangunan untuk kebutuhan konstruksi kayu dan beton.
+              </p>
+            </div>
+          </div>
+          <!-- Duma -->
+          <div
+            class="reveal delay-300 item-card bg-navy-800 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🧱
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Duma</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Material partisi dan plafon ringan untuk interior bangunan modern.
+              </p>
+            </div>
+          </div>
+          <!-- Tandon -->
+          <div
+            class="reveal delay-100 item-card bg-navy-800 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              💧
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Tandon</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Tangki air berbagai kapasitas untuk hunian, perkantoran, dan proyek.
+              </p>
+            </div>
+          </div>
+          <!-- Timba Cor -->
+          <div
+            class="reveal delay-200 item-card bg-navy-800 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🪣
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Timba Cor</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Peralatan pengecoran beton untuk kebutuhan konstruksi di lapangan.
+              </p>
+            </div>
+          </div>
+          <!-- Atap Seng Gelombang -->
+          <div
+            class="reveal delay-300 item-card bg-navy-800 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🏚️
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Atap Seng Gelombang</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Atap seng bergelombang tahan cuaca untuk gudang, pabrik, dan bangunan sederhana.
+              </p>
+            </div>
+          </div>
+          <!-- Aluminium -->
+          <div
+            class="reveal delay-100 item-card bg-navy-800 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🪟
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Aluminium</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Profil dan lembaran aluminium untuk kusen, pintu, jendela, dan fasad bangunan.
+              </p>
+            </div>
+          </div>
+          <!-- Keramik -->
+          <div
+            class="reveal delay-200 item-card bg-navy-800 border border-white/8 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-2xl">
+              🔲
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Keramik</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Keramik lantai dan dinding berbagai ukuran dan motif untuk hunian & komersial.
+              </p>
+            </div>
+          </div>
+          <!-- Lainnya -->
+          <div
+            class="reveal delay-300 item-card bg-gradient-to-br from-amber-500/15 to-amber-600/5 border border-amber-500/30 rounded-2xl p-6 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center shrink-0 text-2xl">
+              📦
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-base mb-1">Material Lainnya</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Tidak ada di daftar? Hubungi kami — kami siap mendiskusikan kebutuhan pengiriman Anda.
+              </p>
+              <a
+                href="https://wa.me/6282257248375"
+                target="_blank"
+                class="inline-flex items-center gap-1 mt-3 text-amber-400 text-xs font-bold hover:text-amber-300 transition-colors"
+              >
+                Tanya via WhatsApp →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 px-6 lg:px-16 bg-navy-950 text-center">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="font-display text-3xl lg:text-4xl font-800 text-white mb-4">Siap Kirim Material Anda?</h2>
+        <p class="text-slate-400 mb-8">
+          Hubungi kami sekarang untuk mendapatkan estimasi harga dan jadwal pengiriman terbaik.
+        </p>
+        <a
+          href="https://wa.me/6282257248375"
+          target="_blank"
+          class="wa-btn inline-flex items-center gap-3 bg-green-500 hover:bg-green-400 text-white font-bold text-base px-8 py-4 rounded-2xl transition-all hover:scale-105 shadow-xl"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          Chat WhatsApp Sekarang
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER SIMPLE -->
+    <footer class="bg-navy-950 border-t border-white/8 py-6 px-6 text-center">
+      <p class="text-slate-500 text-sm">
+        © <span id="year"></span> Ekspedisi Nusantara Indah ·
+        <a href="index.html" class="hover:text-amber-400 transition-colors">Kembali ke Beranda</a>
+      </p>
+    </footer>
+
+    <!-- Floating WA -->
+    <a
+      href="https://wa.me/6282257248375"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-400 rounded-full flex items-center justify-center shadow-2xl wa-btn transition-transform hover:scale-110"
+    >
+      <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const revealEls = document.querySelectorAll(".reveal");
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -30px 0px" },
+      );
+      revealEls.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armada Truk | Ekspedisi Nusantara Indah</title>
+    <meta
+      name="description"
+      content="Armada truk Nusantara Indah: Fuso, Colt Diesel, dan Tronton siap melayani pengiriman Surabaya ke Bali."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              display: ["Syne", "sans-serif"],
+            },
+            colors: {
+              navy: {
+                950: "#04090F",
+                900: "#071524",
+                800: "#0A2038",
+                700: "#0D2E52",
+                600: "#1A4A7A",
+                500: "#1E5B9A",
+              },
+              amber: {
+                400: "#FBBF24",
+                500: "#F59E0B",
+                600: "#D97706",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .armada-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+      .armada-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 28px 70px rgba(0, 0, 0, 0.3);
+        border-color: #f59e0b;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-28px);
+        transition:
+          opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .delay-100 {
+        transition-delay: 0.1s;
+      }
+      .delay-200 {
+        transition-delay: 0.2s;
+      }
+      .delay-300 {
+        transition-delay: 0.3s;
+      }
+      .wa-btn {
+        animation: waPulse 2.5s ease infinite;
+      }
+      @keyframes waPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 0 14px rgba(34, 197, 94, 0);
+        }
+      }
+      .img-placeholder {
+        background: linear-gradient(135deg, rgba(26, 74, 122, 0.4) 0%, rgba(10, 32, 56, 0.9) 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+    </style>
+  </head>
+  <body class="bg-navy-950 text-white font-sans antialiased">
+    <!-- NAVBAR -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-16 py-4 bg-navy-950/95 backdrop-blur-md border-b border-white/8"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center overflow-hidden">
+            <img src="/image/logo.png" alt="Logo" class="w-full h-full object-contain" />
+          </div>
+          <div>
+            <span class="font-display text-lg font-800 text-white leading-none">Nusantara Indah</span>
+            <p class="text-[9px] text-amber-400 font-bold tracking-widest uppercase leading-none mt-0.5">
+              Ekspedisi Surabaya - Bali
+            </p>
+          </div>
+        </a>
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors text-sm font-semibold"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Kembali ke Beranda
+        </a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="pt-32 pb-16 px-6 lg:px-16 bg-navy-900 relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-amber-500/5 rounded-full blur-3xl"
+        ></div>
+      </div>
+      <div class="max-w-7xl mx-auto text-center relative z-10">
+        <span class="inline-block text-amber-400 text-xs font-bold tracking-[0.25em] uppercase mb-4"
+          >Kekuatan Kami</span
+        >
+        <h1 class="font-display text-4xl lg:text-6xl font-800 text-white leading-tight mb-5">
+          Armada <span class="text-amber-400">Truk</span> Kami
+        </h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          Didukung armada truk lengkap dan terawat — dari Colt Diesel hingga Tronton — siap mengangkut berbagai jenis
+          muatan dengan aman dan tepat waktu.
+        </p>
+        <!-- Stats bar -->
+        <div class="flex flex-wrap justify-center gap-8 mt-10">
+          <div class="text-center">
+            <p class="font-display text-3xl font-800 text-amber-400">3+</p>
+            <p class="text-slate-400 text-sm">Jenis Armada</p>
+          </div>
+          <div class="w-px bg-white/10 hidden sm:block"></div>
+          <div class="text-center">
+            <p class="font-display text-3xl font-800 text-amber-400">24+</p>
+            <p class="text-slate-400 text-sm">Tahun Pengalaman</p>
+          </div>
+          <div class="w-px bg-white/10 hidden sm:block"></div>
+          <div class="text-center">
+            <p class="font-display text-3xl font-800 text-amber-400">100%</p>
+            <p class="text-slate-400 text-sm">Barang Aman</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARMADA SECTION -->
+    <section class="py-20 px-6 lg:px-16 bg-navy-950">
+      <div class="max-w-7xl mx-auto space-y-16">
+        <!-- === FUSO === -->
+        <div class="reveal armada-card bg-navy-900 border border-white/8 rounded-3xl overflow-hidden">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <!-- Photo -->
+            <div class="relative h-64 lg:h-auto min-h-[300px]">
+              <img
+                src="/image/fuso.jpg"
+                alt="Truk Fuso Nusantara Indah"
+                class="absolute inset-0 w-full h-full object-cover"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <div class="absolute inset-0 img-placeholder" style="display: none">
+                <div class="text-6xl">🚛</div>
+                <p class="text-slate-400 text-sm font-semibold">Foto Truk Fuso</p>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent to-navy-900/40 lg:block hidden"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent lg:hidden"></div>
+              <!-- Badge -->
+              <div class="absolute top-5 left-5">
+                <span
+                  class="bg-amber-500 text-navy-950 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider"
+                  >Armada Utama</span
+                >
+              </div>
+            </div>
+            <!-- Info -->
+            <div class="p-8 lg:p-10 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/15 flex items-center justify-center text-2xl shrink-0">
+                  🚛
+                </div>
+                <div>
+                  <h2 class="font-display text-3xl font-800 text-white">Truk Fuso</h2>
+                  <p class="text-amber-400 text-sm font-semibold">Medium Duty Truck</p>
+                </div>
+              </div>
+              <p class="text-slate-400 leading-relaxed mb-6">
+                Andalan kami untuk pengiriman material proyek skala menengah. Truk Fuso memiliki kapasitas muatan yang
+                besar dengan manuver yang lebih fleksibel dibanding tronton, cocok untuk akses lokasi proyek yang lebih
+                sempit.
+              </p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Kapasitas Muatan</p>
+                  <p class="text-white font-semibold text-sm">± 5–8 Ton</p>
+                </div>
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Cocok Untuk</p>
+                  <p class="text-white font-semibold text-sm">Material Besi, Plat, Pipa</p>
+                </div>
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Bak</p>
+                  <p class="text-white font-semibold text-sm">Terbuka / Terpal</p>
+                </div>
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Rute</p>
+                  <p class="text-white font-semibold text-sm">Surabaya → Seluruh Bali</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- === COLT DIESEL === -->
+        <div class="reveal delay-100 armada-card bg-navy-900 border border-white/8 rounded-3xl overflow-hidden">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <!-- Info first on mobile, second on desktop -->
+            <div class="p-8 lg:p-10 flex flex-col justify-center lg:order-1 order-2">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/15 flex items-center justify-center text-2xl shrink-0">
+                  🚚
+                </div>
+                <div>
+                  <h2 class="font-display text-3xl font-800 text-white">Colt Diesel</h2>
+                  <p class="text-amber-400 text-sm font-semibold">Light–Medium Duty Truck</p>
+                </div>
+              </div>
+              <p class="text-slate-400 leading-relaxed mb-6">
+                Pilihan tepat untuk pengiriman volume menengah ke berbagai lokasi di Bali. Colt Diesel sangat gesit dan
+                mampu menjangkau area dengan akses jalan yang lebih terbatas, termasuk kawasan pedesaan dan
+                perkampungan.
+              </p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Kapasitas Muatan</p>
+                  <p class="text-white font-semibold text-sm">± 2–4 Ton</p>
+                </div>
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Cocok Untuk</p>
+                  <p class="text-white font-semibold text-sm">Keramik, Paku, Material Ringan</p>
+                </div>
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Bak</p>
+                  <p class="text-white font-semibold text-sm">Terbuka / Terpal</p>
+                </div>
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Rute</p>
+                  <p class="text-white font-semibold text-sm">Surabaya → Seluruh Bali</p>
+                </div>
+              </div>
+            </div>
+            <!-- Photo -->
+            <div class="relative h-64 lg:h-auto min-h-[300px] lg:order-2 order-1">
+              <img
+                src="/image/colt-diesel.webp"
+                alt="Truk Colt Diesel Nusantara Indah"
+                class="absolute inset-0 w-full h-full object-cover"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <div class="absolute inset-0 img-placeholder" style="display: none">
+                <div class="text-6xl">🚚</div>
+                <p class="text-slate-400 text-sm font-semibold">Foto Colt Diesel</p>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-l from-transparent to-navy-900/40 lg:block hidden"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent lg:hidden"></div>
+              <div class="absolute top-5 left-5">
+                <span class="bg-blue-500 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider"
+                  >Fleksibel & Gesit</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- === TRONTON === -->
+        <!-- === TRONTON === -->
+        <div class="reveal delay-200 armada-card bg-navy-900 border border-white/8 rounded-3xl overflow-hidden">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <!-- Info -->
+            <div class="p-8 lg:p-10 flex flex-col justify-center lg:order-2 order-2">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/15 flex items-center justify-center text-2xl shrink-0">
+                  🚜
+                </div>
+                <div>
+                  <h2 class="font-display text-3xl font-800 text-white">Tronton</h2>
+                  <p class="text-amber-400 text-sm font-semibold">Heavy Duty Truck</p>
+                </div>
+              </div>
+
+              <p class="text-slate-400 leading-relaxed mb-6">
+                Solusi pengiriman skala besar untuk proyek industri dan konstruksi berat. Tronton dengan kapasitas
+                muatan tertinggi sangat ideal untuk pengiriman besi WF, pipa besar, alat proyek, material curah, hingga
+                logistik volume besar dalam satu kali pengiriman.
+              </p>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Kapasitas Muatan</p>
+                  <p class="text-white font-semibold text-sm">± 15–30 Ton</p>
+                </div>
+
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Cocok Untuk</p>
+                  <p class="text-white font-semibold text-sm">Besi WF, Material Berat, Industri</p>
+                </div>
+
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Bak</p>
+                  <p class="text-white font-semibold text-sm">Terbuka / Terpal / Flatbed</p>
+                </div>
+
+                <div class="bg-navy-800/60 rounded-xl p-4 border border-white/5">
+                  <p class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">Rute</p>
+                  <p class="text-white font-semibold text-sm">Surabaya → Seluruh Bali</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo -->
+            <div class="relative h-64 lg:h-auto min-h-[300px] lg:order-1 order-1">
+              <img
+                src="/image/tronton.webp"
+                alt="Truk Tronton Nusantara Indah"
+                class="absolute inset-0 w-full h-full object-cover"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+
+              <!-- fallback -->
+              <div class="absolute inset-0 img-placeholder" style="display: none">
+                <div class="text-6xl">🚜</div>
+                <p class="text-slate-400 text-sm font-semibold">Foto Tronton</p>
+              </div>
+
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent to-navy-900/40 lg:block hidden"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent lg:hidden"></div>
+
+              <div class="absolute top-5 left-5">
+                <span
+                  class="bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider"
+                >
+                  Kapasitas Terbesar
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN ARMADA -->
+    <section class="py-16 px-6 lg:px-16 bg-navy-900">
+      <div class="max-w-7xl mx-auto">
+        <div class="reveal text-center mb-12">
+          <h2 class="font-display text-3xl font-800 text-white mb-3">
+            Kenapa Pilih Armada <span class="text-amber-400">Kami?</span>
+          </h2>
+          <p class="text-slate-400 max-w-xl mx-auto text-sm">
+            Setiap armada kami dirawat secara rutin dan dioperasikan oleh driver berpengalaman.
+          </p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div
+            class="reveal delay-100 bg-navy-800/60 border border-white/8 rounded-2xl p-6 text-center hover:border-amber-500/30 transition-colors"
+          >
+            <div class="text-3xl mb-3">🔧</div>
+            <h3 class="text-white font-bold text-sm mb-2">Terawat & Prima</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Armada diservis secara berkala untuk memastikan perjalanan tanpa hambatan.
+            </p>
+          </div>
+          <div
+            class="reveal delay-200 bg-navy-800/60 border border-white/8 rounded-2xl p-6 text-center hover:border-amber-500/30 transition-colors"
+          >
+            <div class="text-3xl mb-3">🧑🚛</div>
+            <h3 class="text-white font-bold text-sm mb-2">Driver Berpengalaman</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Pengemudi kami hafal rute Surabaya-Bali dan profesional dalam menjaga muatan.
+            </p>
+          </div>
+          <div
+            class="reveal delay-300 bg-navy-800/60 border border-white/8 rounded-2xl p-6 text-center hover:border-amber-500/30 transition-colors"
+          >
+            <div class="text-3xl mb-3">📦</div>
+            <h3 class="text-white font-bold text-sm mb-2">Muatan Aman</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Barang diikat dan ditata dengan benar menggunakan alat pengaman standar.
+            </p>
+          </div>
+          <div
+            class="reveal delay-100 bg-navy-800/60 border border-white/8 rounded-2xl p-6 text-center hover:border-amber-500/30 transition-colors"
+          >
+            <div class="text-3xl mb-3">⏱️</div>
+            <h3 class="text-white font-bold text-sm mb-2">Tepat Waktu</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Jadwal keberangkatan terencana dan pemantauan selama perjalanan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 px-6 lg:px-16 bg-navy-950 text-center">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="font-display text-3xl lg:text-4xl font-800 text-white mb-4">Butuh Armada yang Tepat?</h2>
+        <p class="text-slate-400 mb-8">
+          Konsultasikan kebutuhan pengiriman Anda dengan kami — kami akan bantu pilih armada yang sesuai kapasitas dan
+          muatan Anda.
+        </p>
+        <a
+          href="https://wa.me/6282257248375"
+          target="_blank"
+          class="wa-btn inline-flex items-center gap-3 bg-green-500 hover:bg-green-400 text-white font-bold text-base px-8 py-4 rounded-2xl transition-all hover:scale-105 shadow-xl"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          Konsultasi via WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 border-t border-white/8 py-6 px-6 text-center">
+      <p class="text-slate-500 text-sm">
+        © <span id="year"></span> Ekspedisi Nusantara Indah ·
+        <a href="index.html" class="hover:text-amber-400 transition-colors">Kembali ke Beranda</a>
+      </p>
+    </footer>
+
+    <!-- Floating WA -->
+    <a
+      href="https://wa.me/6282257248375"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-400 rounded-full flex items-center justify-center shadow-2xl wa-btn transition-transform hover:scale-110"
+    >
+      <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const revealEls = document.querySelectorAll(".reveal, .reveal-left");
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -30px 0px" },
+      );
+      revealEls.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>
